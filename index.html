@@ -134,11 +134,11 @@
                 justify-content: space-between;
             }
             .logo {
-                order: 2;
+                order: 1;
             }
             .logo img {
-                width: 100px;
-                height: 90px;
+                width: 120px;
+                height: 100px;
             }
             .hamburger {
                 display: block;
@@ -146,7 +146,7 @@
                 width: 30px;
                 height: 25px;
                 position: relative;
-                order: 1;
+                order: 2;
             }
             .hamburger div {
                 background-color: #000;
@@ -186,6 +186,10 @@
                 width: 100%;
                 justify-content: center;
             }
+            .social-links a img {
+                width: 15px;
+                height: 15px;
+            }
             .selectable-image-container {
                 flex-direction: column;
                 align-items: center;
@@ -199,13 +203,13 @@
 </head>
 <body>
     <header class="header">
+        <div class="logo">
+            <img src="images/zach_logo.png" alt="Logo" loading="lazy">
+        </div>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
-        </div>
-        <div class="logo">
-            <img src="images/zach_logo.png" alt="Logo" loading="lazy">
         </div>
     </header>
 
