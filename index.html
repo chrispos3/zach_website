@@ -15,15 +15,35 @@
             justify-content: space-between;
             align-items: center;
             background-color: #ffffff;
-            padding: 30px 30px;
+            padding: 20px 30px;
+        }
+        .logo {
+            order: 2; /* Position logo to the right */
         }
         .logo img {
-            width: 100px;
-            height: 90px;
+            width: 120px;
+            height: 110px;
+        }
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            order: 1; /* Position hamburger to the left */
+            margin-right: auto;
+        }
+        .hamburger div {
+            background-color: #000;
+            height: 3px;
+            margin: 5px 0;
+            width: 100%;
+            transition: 0.3s;
         }
         .nav-container {
             display: flex;
             align-items: center;
+            order: 3;
         }
         .nav-links {
             list-style: none;
@@ -131,12 +151,12 @@
         /* Mobile styles */
         @media (max-width: 768px) {
             .header {
-                flex-direction: column;
+                flex-direction: row;
                 padding: 15px 15px;
             }
             .logo img {
-                width: 80px;
-                height: 70px;
+                width: 100px;
+                height: 90px;
             }
             .nav-container {
                 flex-direction: column;
@@ -178,32 +198,27 @@
                 width: 90%;
             }
             .hamburger {
-                display: block;
-                cursor: pointer;
-                width: 30px;
-                height: 25px;
-                position: relative;
-                margin-left: auto;
+                order: 1;
+                margin-right: 10px;
             }
-            .hamburger div {
-                background-color: #000;
-                height: 3px;
-                margin: 5px 0;
-                width: 100%;
-                transition: 0.3s;
+            .logo {
+                order: 2;
+            }
+            .nav-container {
+                order: 3;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="images/zach_logo.png" alt="Logo" loading="lazy">
-        </div>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
+        </div>
+        <div class="logo">
+            <img src="images/zach_logo.png" alt="Logo" loading="lazy">
         </div>
         <div class="nav-container">
             <ul class="nav-links">
@@ -211,6 +226,8 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="collaborations.html">Collaborations</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="main_page_sub/jersey_art.html">Jersey Art</a></li>
+                <li><a href="main_page_sub/wooden_art.html">Wooden Art</a></li>
             </ul>
             <ul class="social-links">
                 <li><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="images/insta_icon.png" alt="Instagram Logo"></a></li>
@@ -222,16 +239,6 @@
     <main>
         <section id="home">
             <h1>Select any option below to see more</h1>
-            <div class="selectable-image-container">
-                <a href="main_page_sub/jersey_art.html">
-                    <img src="images/jersey_zach.png" alt="Selectable Image">
-                </a>
-            </div>
-            <div class="selectable-image-container">
-                <a href="main_page_sub/wooden_art.html">
-                    <img src="images/wooden_zach.png" alt="Selectable Image">
-                </a>
-            </div>
             <div class="selectable-image-container">
                 <a href="main_page_sub/canvas_art.html">
                     <img src="images/canvas_zach.png" alt="Selectable Image">
