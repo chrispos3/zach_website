@@ -15,35 +15,15 @@
             justify-content: space-between;
             align-items: center;
             background-color: #ffffff;
-            padding: 20px 30px;
-        }
-        .logo {
-            order: 2; /* Position logo to the right */
+            padding: 15px;
         }
         .logo img {
             width: 120px;
-            height: 110px;
-        }
-        .hamburger {
-            display: block;
-            cursor: pointer;
-            width: 30px;
-            height: 25px;
-            position: relative;
-            order: 1; /* Position hamburger to the left */
-            margin-right: auto;
-        }
-        .hamburger div {
-            background-color: #000;
-            height: 3px;
-            margin: 5px 0;
-            width: 100%;
-            transition: 0.3s;
+            height: 100px;
         }
         .nav-container {
             display: flex;
             align-items: center;
-            order: 3;
         }
         .nav-links {
             list-style: none;
@@ -93,7 +73,6 @@
         .social-links a img {
             width: 20px;
             height: 20px;
-            gap: 10px;
             padding-left: 20px;
         }
 
@@ -152,11 +131,29 @@
         @media (max-width: 768px) {
             .header {
                 flex-direction: row;
-                padding: 15px 15px;
+                justify-content: space-between;
+            }
+            .logo {
+                order: 2;
             }
             .logo img {
                 width: 100px;
                 height: 90px;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                width: 30px;
+                height: 25px;
+                position: relative;
+                order: 1;
+            }
+            .hamburger div {
+                background-color: #000;
+                height: 3px;
+                margin: 5px 0;
+                width: 100%;
+                transition: 0.3s;
             }
             .nav-container {
                 flex-direction: column;
@@ -167,7 +164,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
-                display: none; /* Hide menu by default */
+                display: none;
                 width: 100%;
                 background-color: #fff;
                 padding: 10px;
@@ -197,16 +194,6 @@
             .selectable-image-container a img {
                 width: 90%;
             }
-            .hamburger {
-                order: 1;
-                margin-right: 10px;
-            }
-            .logo {
-                order: 2;
-            }
-            .nav-container {
-                order: 3;
-            }
         }
     </style>
 </head>
@@ -220,25 +207,32 @@
         <div class="logo">
             <img src="images/zach_logo.png" alt="Logo" loading="lazy">
         </div>
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="index.html" id="main-link">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="collaborations.html">Collaborations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="main_page_sub/jersey_art.html">Jersey Art</a></li>
-                <li><a href="main_page_sub/wooden_art.html">Wooden Art</a></li>
-            </ul>
-            <ul class="social-links">
-                <li><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="images/insta_icon.png" alt="Instagram Logo"></a></li>
-                <li><a href="mailto:zachposivakart@gmail.com"><img src="images/email_icon.png" alt="Email Logo"></a></li>
-            </ul>
-        </div>
     </header>
+
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html" id="main-link">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="collaborations.html">Collaborations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="images/insta_icon.png" alt="Instagram"></a></li>
+            <li><a href="mailto:zachposivakart@gmail.com"><img src="images/email_icon.png" alt="Email"></a></li>
+        </ul>
+    </div>
 
     <main>
         <section id="home">
             <h1>Select any option below to see more</h1>
+            <div class="selectable-image-container">
+                <a href="main_page_sub/jersey_art.html">
+                    <img src="images/jersey_zach.png" alt="Selectable Image">
+                </a>
+            </div>
+            <div class="selectable-image-container">
+                <a href="main_page_sub/wooden_art.html">
+                    <img src="images/wooden_zach.png" alt="Selectable Image">
+                </a>
+            </div>
             <div class="selectable-image-container">
                 <a href="main_page_sub/canvas_art.html">
                     <img src="images/canvas_zach.png" alt="Selectable Image">
@@ -266,11 +260,7 @@
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-            }
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
     </script>
 </body>
