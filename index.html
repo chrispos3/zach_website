@@ -66,14 +66,13 @@
         .social-links {
             list-style: none;
             display: flex;
-            gap: 0px;
+            gap: 10px;
             margin: 0;
             padding: 0;
         }
         .social-links a img {
             width: 20px;
             height: 20px;
-            padding-left: 20px;
         }
 
         #home h1 {
@@ -130,15 +129,7 @@
         /* Mobile styles */
         @media (max-width: 768px) {
             .header {
-                flex-direction: row;
                 justify-content: space-between;
-            }
-            .logo {
-                order: 1;
-            }
-            .logo img {
-                width: 120px;
-                height: 100px;
             }
             .hamburger {
                 display: block;
@@ -181,7 +172,7 @@
                 border-bottom: 1px solid #ddd;
             }
             .social-links {
-                gap: 10px;
+                gap: 5px;
                 padding-top: 10px;
                 width: 100%;
                 justify-content: center;
@@ -211,18 +202,17 @@
             <div></div>
             <div></div>
         </div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" id="main-link">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collaborations.html">Collaborations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-only"><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="images/insta_icon.png" alt="Instagram"></a></li>
+                <li class="mobile-only"><a href="mailto:zachposivakart@gmail.com"><img src="images/email_icon.png" alt="Email"></a></li>
+            </ul>
+        </div>
     </header>
-
-    <div class="nav-container">
-        <ul class="nav-links">
-            <li><a href="index.html" id="main-link">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="collaborations.html">Collaborations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="images/insta_icon.png" alt="Instagram"></a></li>
-            <li><a href="mailto:zachposivakart@gmail.com"><img src="images/email_icon.png" alt="Email"></a></li>
-        </ul>
-    </div>
 
     <main>
         <section id="home">
