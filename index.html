@@ -40,19 +40,18 @@
             color: rgb(0, 0, 0);
             text-decoration: none;
             padding: 5px 5px;
-            font-size: 14px; /* Increase font size */
-            position: relative; /* Required for pseudo-element positioning */
+            font-size: 14px;
+            position: relative;
             transition: color 0.3s;
-            gap: 20px;
         }
         .nav-links a#main-link::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -3px; /* Adjust this value to control the distance from the text */
+            bottom: -3px;
             width: 100%;
-            height: 2px; /* Adjust this value to control the thickness */
-            background-color: #000; /* Change this to the desired color */
+            height: 2px;
+            background-color: #000;
             transition: transform 0.3s;
             transform: scaleX(1);
             transform-origin: bottom right;
@@ -88,17 +87,15 @@
         .selectable-image-container {
             display: flex;
             justify-content: center;
-            height: 100vh; /* Full height of the viewport */
-            margin: 20px 0; /* Add some margin for spacing */
-            padding-bottom: 70px;
+            margin: 20px 0;
         }
         .selectable-image-container a img {
-            width: 1400px; /* Set desired width */
-            height: auto; /* Maintain aspect ratio */
-            transition: transform 0.3s; /* Smooth transition for hover effect */
+            width: 1400px;
+            height: auto;
+            transition: transform 0.3s;
         }
         .selectable-image-container a img:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
+            transform: scale(1.05);
         }
         .footer {
             background-color: #ffffff;
@@ -131,7 +128,7 @@
             color: #000000;
         }
 
-         /* Mobile styles */
+        /* Mobile styles */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -144,35 +141,69 @@
             .nav-container {
                 flex-direction: column;
                 align-items: flex-start;
+                width: 100%;
             }
             .nav-links {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
+                display: none; /* Hide menu by default */
+                width: 100%;
+                background-color: #fff;
+                padding: 10px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            .nav-links li {
+                width: 100%;
             }
             .nav-links a {
                 font-size: 16px;
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid #ddd;
             }
             .social-links {
                 gap: 10px;
                 padding-top: 10px;
+                width: 100%;
+                justify-content: center;
             }
             .selectable-image-container {
                 flex-direction: column;
-                height: auto;
-                padding-bottom: 20px;
+                align-items: center;
+                margin: 20px 0;
             }
             .selectable-image-container a img {
                 width: 90%;
             }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                width: 30px;
+                height: 25px;
+                position: relative;
+                margin-left: auto;
+            }
+            .hamburger div {
+                background-color: #000;
+                height: 3px;
+                margin: 5px 0;
+                width: 100%;
+                transition: 0.3s;
+            }
         }
-
     </style>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="images/zach_logo.png" alt="Logo" loading="lazy" style="width: 12rem; height: 8rem;" >
+            <img src="images/zach_logo.png" alt="Logo" loading="lazy">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <div class="nav-container">
             <ul class="nav-links">
@@ -212,18 +243,6 @@
                 </a>
             </div>
         </section>
-        <section id="about">
-            <h1></h1>
-            <p></p>
-        </section>
-        <section id="collaborations">
-            <h1></h1>
-            <p></p>
-        </section>
-        <section id="contact">
-            <h1></h1>
-            <p></p>
-        </section>
     </main>
     <footer class="footer">
         <div class="footer-links">
@@ -236,5 +255,16 @@
         </div>
         <div class="footer-text">©2024 Zachary Posivak</div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>
