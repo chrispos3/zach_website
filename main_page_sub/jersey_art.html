@@ -281,6 +281,31 @@
         .social-links.mobile-active {
             animation: fadeIn 0.5s ease-in-out;
         }
+        /* Mobile styles for selectable images */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 20px;
+            }
+            .image-container {
+                width: 100%;
+                text-align: center; /* Center text below images */
+                margin-bottom: 20px; /* Space between image containers */
+            }
+            .selectable-image {
+                width: 100%; /* Make images full width */
+                max-width: 300px; /* Optional: limit the max width */
+                margin: 0 auto 10px; /* Center image and space between image and caption */
+            }
+            .selectable-image img {
+                width: 100%;
+                height: auto;
+            }
+            .image-container p {
+                font-size: 1.2rem; /* Adjust font size */
+            }
+        }
     </style>
 </head>
 <body>
@@ -360,10 +385,10 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="https://www.instagram.com/zachposivakart/" target="_blank">
-                <img src="../images/insta_icon.png" alt="Instagram">
+                <img src="/images/insta_icon.png" alt="Instagram">
             </a>
             <a href="mailto:zachposivakart@gmail.com">
-                <img src="../images/email_icon.png" alt="Email">
+                <img src="/images/email_icon.png" alt="Email">
             </a>
         </div>
         <div class="footer-text">©2024 Zachary Posivak</div>
