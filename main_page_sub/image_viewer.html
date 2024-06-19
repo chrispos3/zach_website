@@ -138,23 +138,177 @@
             font-size: 14px;
             color: #000000;
         }
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            body {
+                font-size: 30px; /* Adjust base font size for better readability */
+            }
+            .header {
+                padding: 20px; /* Reduce header padding for smaller screens */
+            }
+            .logo img {
+                width: 80px; /* Adjust logo size for smaller screens */
+                height: auto;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+                height: 500px;
+                background-color: rgba(255, 255, 255, 1); /* Semi-transparent background */
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 9999; /* Ensure it's on top of other content */
+                padding: 20vh 0; /* Adjust vertical padding for centering */
+                text-align: center;
+                font-family: monospace;
+                font-weight: light;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            .nav-links.mobile-active {
+                display: flex;
+                opacity: 1;
+                animation: fadeIn 0.5s ease-in-out;
+            }
+            .nav-links.mobile-active .mobile-logo {
+                display: block;
+                position: absolute;
+                top: 20px; /* Adjust as needed */
+                left: 20px; /* Adjust as needed */
+                margin: 0;
+            }
+            .social-links {
+                display: none;
+                flex-direction: row;
+                align-self: center;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                z-index: 9999; /* Ensure it's on top of other content */
+                background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+                padding: 20px 0; /* Adjust padding as needed */
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            .social-links.mobile-active {
+                display: flex;
+                opacity: 1;
+                animation: fadeIn 0.5s ease-in-out;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                width: 30px;
+                height: 25px;
+                position: absolute;
+                top: 60px; /* Adjust hamburger position */
+                right: 50px; /* Adjust hamburger position */
+                z-index: 10000; /* Ensure it's on top of other content */
+            }
+            .hamburger div {
+                background-color: #000;
+                height: 3px;
+                margin: 5px 0;
+                width: 100%;
+                transition: 0.3s;
+            }
+        }
+        @media (min-width: 769px) {
+            .nav-links .mobile-logo {
+                display: none;
+            }
+        }
+
+        /* Styles for the hamburger menu animation */
+        .hamburger.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .hamburger div {
+            transition: all 0.3s ease;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .nav-links.mobile-active,
+        .social-links.mobile-active {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Mobile styles for selectable images */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 20px;
+            }
+            .image-container {
+                width: 100%;
+                text-align: center; /* Center text below images */
+            }
+            .selectable-image {
+                width: 100%; /* Make images full width */
+                max-width: 300px; /* Optional: limit the max width */
+                margin: 0 auto 5px; /* Center image and space between image and caption */
+            }
+            .selectable-image img {
+                width: 100%;
+                height: auto;
+            }
+            .image-container p {
+                font-size: 1.5rem; /* Adjust font size */
+            }
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="/images/zach_logo.png" alt="Logo" loading="lazy" style="width: 12rem; height: 8rem;" >
+            <img src="../images/zach_logo.png" alt="Logo" loading="lazy" style="width: 12rem; height: auto" >
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/collaborations.html">Collaborations</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../collaborations.html">Collaborations</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li class="mobile-logo">
+                    <img src="../images/zach_logo.png" alt="Logo" loading="lazy" style="width: 12rem; height: auto;">
+                </li>
             </ul>
             <ul class="social-links">
-                <li><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="/images/insta_icon.png" alt="Instagram Logo"></a></li>
-                <li><a href="mailto:zachposivakart@gmail.com"><img src="/images/email_icon.png" alt="Email Logo"></a></li>
+                <li><a href="https://www.instagram.com/zachposivakart/" target="_blank"><img src="../images/insta_icon.png" alt="Instagram Logo"></a></li>
+                <li><a href="mailto:zachposivakart@gmail.com"><img src="../images/email_icon.png" alt="Email Logo"></a></li>
             </ul>
         </div>
     </header>
@@ -175,10 +329,10 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="https://www.instagram.com/zachposivakart/" target="_blank">
-                <img src="/images/insta_icon.png" alt="Instagram">
+                <img src="../images/insta_icon.png" alt="Instagram">
             </a>
             <a href="mailto:zachposivakart@gmail.com">
-                <img src="/images/email_icon.png" alt="Email">
+                <img src="../images/email_icon.png" alt="Email">
             </a>
         </div>
         <div class="footer-text">©2024 Zachary Posivak</div>
@@ -197,5 +351,17 @@
             document.getElementById('main-image').src = '/main_page_sub/' + imageName;
         }
     </script>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        const socialLinks = document.querySelector('.social-links');
+        const hamburger = document.querySelector('.hamburger');
+        
+        navLinks.classList.toggle('mobile-active');
+        socialLinks.classList.toggle('mobile-active');
+        hamburger.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
