@@ -232,7 +232,7 @@
                 height: 50px; /* Adjust arrow icon size */
             }
             .image-container img {
-                max-width: 90%; /* Increase the size of the image on mobile */
+                max-width: 100%; /* Increase the size of the image on mobile */
             }
         }
         @media (min-width: 769px) {
@@ -286,7 +286,7 @@
             }
             .selectable-image {
                 width: 100%; /* Make images full width */
-                max-width: 300px; /* Optional: limit the max width */
+                max-width: 600px; /* Optional: limit the max width */
                 margin: 0 auto 5px; /* Center image and space between image and caption */
             }
             .selectable-image img {
@@ -362,7 +362,7 @@
         // Set the image source based on the URL parameter
         const imageName = getQueryParameter('image');
         if (imageName) {
-            document.getElementById('main-image').src = '../main_page_sub/' + imageName;
+            document.getElementById('main-image').src = '/main_page_sub/' + imageName;
         }
     </script>
 
