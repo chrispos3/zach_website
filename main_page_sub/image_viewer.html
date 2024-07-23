@@ -335,7 +335,7 @@
                 </svg>
             </button>
             <div class="image-container">
-                <img id="main-image" src="../" alt="Selected Image" ../>
+                <img id="main-image" src="" alt="Selected Image" ../>
             </div>
         </div>
     </main>
@@ -362,7 +362,7 @@
         // Set the image source based on the URL parameter
         const imageName = getQueryParameter('image');
         if (imageName) {
-            document.getElementById('main-image').src = '/main_page_sub/' + imageName;
+            document.getElementById('main-image').src = '../main_page_sub/' + imageName;
         }
     </script>
 
